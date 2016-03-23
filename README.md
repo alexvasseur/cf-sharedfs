@@ -44,7 +44,23 @@ curl -X GET cfsharedfs.cfapps.semea.piv/sshfs/ls
 cf ssh cfsharedfs
   ls /home/vcap/sshfs 
 ```
-You can also extract a manifest.yml and use env variables to overrides defaults of application.yml
+You can also extract a manifest.yml and use env variables to override defaults of application.yml
+```
+cf push
+```
+```
+# example manifest.yml
+---
+applications:
+- name: cfsharedfs
+  memory: 512M
+  instances: 1
+  path: target/demo-1.0.jar
+  buildpack: java_buildpack_offline
+  host: cfsharedfs
+  domain: cfapps.semea.piv
+  env:
+    git.password: myrealpassword
 
 
 ## Pros / Cons of Git
