@@ -1,0 +1,41 @@
+# override any of this on command line with
+# --git.password=... 
+git:
+  url: https://github.com/avasseur-pivotal/cf-sharedfs.git
+  username: avasseur-pivotal
+  password: secret
+
+# You can override the privateKey using an external application.yml file
+# that Spring Boot will find in the path
+# Please note you need to use the "|" and Yaml indentation syntax for multiline.
+sshfs:
+  userHostPath: ubuntu@192.168.1.19:/home/ubuntu
+  privateKey: |
+    -----BEGIN RSA PRIVATE KEY-----
+    MIIEpAIBAAKCAQEA41FSeV6xHy4tJunpn0/yWZrO402dBiqviTrxiJmf6XwMhRvf
+    DkbeE4OBW/0Q2lzJLI1aZnFmMW17Roj68/G5OyJIqwNxLgY7PPPZR+vLVIaXuOdu
+    6TGodU1l83+wCbxbpMQWdkj8EzxEQ8gkQ1b0w9NvuK2lwDIXivRlzK5Fo9xZqBfy
+    IPkqi5DdxvwqPFEzHiqo02XkTau3hwRY/HmOcVEOtt26FI144F3rxn+RbAbdVarE
+    kD2ZUomPipNEPQY0UJJZy12KS9j1j7dqUGq3egPplGflCxuvtf6kX5vr5LPCQ6JM
+    ggdTDy82ZY/sJsMWpnBWciFM4a3lWibe0exXOwIDAQABAoIBAQCLPNHG1BCsJ62y
+    i071rZOl/SRCqNTI5TaWWUt/P5JrAvfsRLExXolC7Kc9AFrlVjZHmuHHpChTmFsN
+    TnRhHiw2o35degNGjLyWTktGOZFXWgXvVZtjLW6hQ2Jyb0EWBZEg8JdNptD4u06Z
+    Miu8L7RHiuiA96RygHxZOfBtGkY/4l4dnzVjlQkkBr8EywFQaWSQJQf0WPG4n0Vc
+    hoaX0mJU51DnGBudsVTQw6mV3nPs6z69FmwXsupu7cBn0KM2vO2osohTSvfG0nJV
+    c4j91Fe4l/OeN5mFyAOAf72iRvfUh9Yn8kL9R3pcbSc4hyM7W8KjECKfDM21rc2T
+    n4iBN2mJAoGBAPwAMTq0YoQCyGn18D1r4sVW87T7XOFbfThWEbbLbfAQalpWcVet
+    /ZiSnXoTjDwZgy5pEUJLboA/vrP6CxLlapOhi2Yu5AApLtC6sn7Q2SWd3qgc8VYF
+    RukhmwZWUn/pFH0sZzQmSlAUmzhjetUpM/j/anF6DzDnpz8tdXCaJM+/AoGBAObs
+    2Xbwcnl0FvfdqRjNLKrS3k8MV3ahl829kNhEnf5cJWMpDnM2U0BTGwRtvQ7oxd46
+    acmAWLKumvtdM548poyd9eYZW421PkDd73Uy6z4R/ygvtJkGs4+5324KlXtkttRK
+    zPR1J6WpbmnjDHNCT8vvpESRh20COUnx3NoibdeFAoGAWkTnXZQIRimJCQvkRtxC
+    m1YObqIsHz3amTebmNM+SmRW9I1KhJH66ZB7gKNH9K9e4l0YpZrHtoEfGvFSzi4I
+    A2I2wR/C5Jvb/UEjd3Hwlxz6CVZ0zM+PGyvCkH6ThuZDRKOHRJMCw7Td9VENSxY7
+    W9KCmquSjX4t1t+91dwhm5kCgYEA5KqkrKJsuNe75rYYO/bvxDgK6zvNYCujppeQ
+    Vpeb28RjQU3mgS/KQGgK2NfR3nGhfe1Z067EJivATCh+dLKaOaQxWyjBABH5E0Kx
+    W9yQFWa8w455xw5bwHbOSKkyXH3ejVmEmo1oNSMRssiiC4AehFNI1p1E/Sy2jgJy
+    L47oNgECgYBQ6DrywncqWKY41Q6t+YfbK7eJMVwCOcbhRAisnLToDyM/PHB39E+7
+    rTFJXbD8H+StMp+3gU3pgPHnKRYK4wR7L3ergpzDphiEZ7nOI+RAHMSUwlubM873
+    wrKMvJUTxKQb7NJN4kvaSUcVZPDcxSY1Dd8DDEbPnIZkiAn77r8m3g==
+    -----END RSA PRIVATE KEY-----
+
