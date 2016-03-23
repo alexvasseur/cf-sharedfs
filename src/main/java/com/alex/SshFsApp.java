@@ -32,7 +32,7 @@ public class SshFsApp {
 			String[] cmds = new String[]{
 				"mkdir -p /home/vcap/sshfs",
 				"mkdir -p /home/vcap/.ssh",
-				"cat '"+privateKey+"' > /home/vcap/.ssh/sshfs_id_rsa",
+				"echo '"+privateKey+"' > /home/vcap/.ssh/sshfs_id_rsa",
 				"chmod 600 /home/vcap/.ssh/sshfs_id_rsa",
 				"touch /home/vcap/app/known_hosts",
 				"chmod 600 /home/vcap/app/known_hosts"
@@ -45,6 +45,7 @@ public class SshFsApp {
 		        System.out.println("line: " + s);
 		    p.waitFor();
 		    System.out.println ("#### Executing ["+cmd+"] with exit: " + p.exitValue());
+		    
 		    p.destroy();
 		    br.close();
 			}

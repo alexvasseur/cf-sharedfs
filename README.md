@@ -23,6 +23,8 @@ cf push sshfs -p target/...jar
 The default git repo for content is [https://github.com/avasseur-pivotal/cf-sharedfs-content]. You need to use yours with your credentials for the app to write in it.
 The default sshfs endpoint is a private (LAN) linux in which there is a public RSA key setup in .ssh/authorized_keys . You need to use yours for the app to mount it.
 
+If you run multiple instances of this app - the /init endpoint would need to be moved as @PostInit bean lifecycle to ensure all containers are initialized at startup. For demo purpose this is not implemented.
+
 ### Application endpoint
 The app provides basic HTTP endpoint to interact with setting up the shared filesystem and testing access
 ```
@@ -32,6 +34,18 @@ curl -X GET cfapp.domain/git/put
 curl -X GET cfapp.domain/sshfs/init
 curl -X GET cfapp.domain/sshfs/ls
 ```
+
+### Example in Cloud Foundry
+```
+cf push -p target/demo-1.0.jar -b java_buildpack_offline cfsharedfs -i 1
+cf logs --recent cfsharedfs  (or stream in another window)
+curl -X GET cfsharedfs.cfapps.semea.piv/sshfs/init
+curl -X GET cfsharedfs.cfapps.semea.piv/sshfs/ls
+cf ssh cfsharedfs
+  ls /home/vcap/sshfs 
+```
+You can also extract a manifest.yml and use env variables to overrides defaults of application.yml
+
 
 ## Pros / Cons of Git
 
